@@ -1,12 +1,15 @@
 <template>
     <div id="charts">
         <Head></Head>
+        <AccountSide></AccountSide>
         <div id="data">
-            <div class="all-users">
+            <div class="data-box card">
                 <h2>用户信息总览</h2>
-                <UserInfoList :users-info="userInfoData"></UserInfoList>
+                <div style="margin: 10px">
+                    <UserInfoList :users-info="userInfoData"></UserInfoList>
+                </div>
             </div>
-            <div class="users-analysis">
+            <div class="data-box card">
                 <h2>用户情况分析</h2>
                 <div class="row">
                     <div class="col-md-4">
@@ -20,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="all-online">
+            <div class="data-box card">
                 <h2>在线总览</h2>
                 <div class="row">
                     <div class="col-md-7">
@@ -43,7 +46,8 @@
     import AgeChart from './charts/AgeChart';
     import AbnormalInfoChart from './charts/AbnormalInfoChart';
     import UserMapChart from "./charts/UserMapChart";
-    import MapInfoList from  "./lists/MapInfoList"
+    import MapInfoList from "./lists/MapInfoList";
+    import AccountSide from "./others/AccountSide"
 
     export default {
         name: 'chart',
@@ -54,7 +58,8 @@
             AgeChart,
             OnlineNumberChart,
             UserMapChart,
-            MapInfoList
+            MapInfoList,
+            AccountSide
         },
         data: function () {
             let date = new Date();
@@ -63,30 +68,37 @@
                 driveAverageTime: 1.5,
                 healthInfo: "良好",
                 date: date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate(),
-                onlineNumber: 8568,
-                ageLevelOne: 0.3, // 18-25岁比例
-                ageLevelTwo: 0.4, //25-35岁比例
-                ageLevelThree: 0.2, // 35-45岁比例
-                ageLevelFour: 0.1,// 45-60岁比例
-                onLineNumber: [15364, 12686, 12222, 11523, 15323, 15668, 16224, 13225, 14552, 18553], // 动态获取10小时前在线人数
+                onlineNumber: 107878,
+                onLineNumber: [15364, 12686, 12265, 11593, 15323, 15668, 16294, 13275, 14552, 18553], // 动态获取10小时前在线人数
 
             };
             let userMapData = [
-                {name: '海门', value: [111.15, 31.89, 200]},
-                {name: '鄂尔多斯', value: [109.781327, 39.608266, 100]},
-                {name: '招远', value: [129.38, 37.35, 100]},
-                {name: '舟山', value: [122.207216, 29.985295, 500]},
-                {name: '北京', value: [122.207216, 29.985295, 400]},
-                {name: '上海', value: [121.109426, 31.442531, 300]},
-                {name: '苏州', value: [120.619585, 31.299379, 200]},
+                {name: '江苏省', value: [118.76741, 32.041546, 15652]},
+                {name: '河南省', value: [113.665413, 34.757977, 3542]},
+                {name: '辽宁省', value: [123.429092, 41.796768, 5232]},
+                {name: '北京市', value: [116.405289, 39.904987, 7252]},
+                {name: '宁夏省', value: [106.232480, 38.486440, 2854]},
+                {name: '上海市', value: [121.109426, 31.442531, 8653]},
+                {name: '山西省', value: [112.549248, 37.857014, 10223]},
+                {name: '吉林省', value: [125.324501, 43.886841, 3223]},
+                {name: '黑龙江省', value: [126.642464, 45.756966, 493]},
+                {name: '天津市', value: [117.190186, 39.125595, 3975]},
+                {name: '内蒙古', value: [111.751990,40.841490, 551]},
+                {name: '河南省', value: [113.665413,34.757977, 7521]},
+                {name: '陕西省', value: [108.948021,34.263161, 5684]},
+                {name: '湖北省', value: [114.298569,30.584354, 8541]},
+                {name: '安徽省', value: [117.283043,31.861191, 6354]},
+                // 合肥
+                {name: '浙江省', value: [120.15358,30.287458, 12354]},
+
             ];
             let ageData = [
-                {value: 335, name: '18-25岁'},
-                {value: 341, name: '25-35岁'},
-                {value: 310, name: '35-45岁'},
-                {value: 135, name: '45-55岁'},
-                {value: 89, name: '55-60岁'},
-                {value: 232, name: '其他'}
+                {value: 123533, name: '18-25岁'},
+                {value: 265425, name: '25-35岁'},
+                {value: 82525, name: '35-45岁'},
+                {value: 25264, name: '45-55岁'},
+                {value: 2023, name: '55-60岁'},
+                {value: 136565, name: '其他'}
             ];
             let abnormalInfoData = [
                 {value: 10, name: '体温异常'},
@@ -97,14 +109,14 @@
                 {value: 35, name: '其他'},
             ];
             let onlineData = {
-                thisWeekData: [220, 182, 191, 234, 290, 330, 310],
-                lastWeekData: [800, 300, 500, 800, 300, 600, 500]
+                thisWeekData: [95694, 114536, 85421, 86586, 115645, 172565, 133231],
+                lastWeekData: [106694, 104536, 115421, 96586, 95645, 152565, 163231]
             };
             let mapInfoData = {
-                hotCity:"南京",
-                hotCityOnlineUsers:4548,
-                increaseFastestCity:"苏州",
-                increaseNumber:1684
+                hotArea: "江苏省",
+                hotAreaOnlineUsers: 15652,
+                increaseFastestArea: "上海市",
+                increaseNumber: 3521
             };
 
 
@@ -127,7 +139,11 @@
     }
 
     h2 {
-        margin: 20px;
+        margin: 10px;
+    }
+
+    .data-box {
+        margin-top: 20px;
     }
 
 </style>

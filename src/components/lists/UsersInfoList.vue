@@ -60,8 +60,8 @@
 
 <style scoped>
     .info {
-        padding: 10px;
         font-size: 18px;
+        padding:10px 20px 10px 20px;
     }
     .info-icon{
         font-size: 35px;

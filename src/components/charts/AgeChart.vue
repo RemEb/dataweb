@@ -24,8 +24,8 @@
                     },
                     visualMap: {
                         show: false,
-                        min: 0,
-                        max: 400,
+                        min: 2000,
+                        max: 300000,
                         inRange: {
                             colorLightness: [0, 1]
                         }

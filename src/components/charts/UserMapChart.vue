@@ -68,7 +68,7 @@
                                 }
                             },
                             symbolSize: function (val) {//根据数值大小控制点的大小
-                                return val[2] / 20;
+                                return val[2] / 500;
                             },
                         },
                         {
@@ -77,7 +77,7 @@
                             coordinateSystem: 'geo',
                             data: this.userMapData,
                             symbolSize: function (val) {
-                                return val[2] / 20;
+                                return val[2] / 500;
                             },
                             showEffectOn: 'render',
                             rippleEffect: {
@@ -105,7 +105,7 @@
                     visualMap: {
                         type: 'continuous', // 连续型
                         min: 0,       		// 值域最小值，必须参数
-                        max: 500,			// 值域最大值，必须参数
+                        max: 20000,			// 值域最大值，必须参数
                         calculable: true,	// 是否启用值域漫游
                         inRange: {
                             color: ['#50a3ba', '#eac736', '#d94e5d']

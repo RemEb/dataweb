@@ -21,7 +21,7 @@
                 // 绘制图表
                 myChart.setOption({
                     title: {
-                        text: '本周峰值在线人数变化',
+                        text: '峰值在线人数变化',
                         x: 'center'
                     },
 
