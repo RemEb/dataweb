@@ -2,28 +2,29 @@
     <div id="account">
         <a href="#"><img src="../../assets/photo.png"></a>
         <div class="account-text">
-            <a href="#"><p>Bessie Berry</p></a>
-            <p>管理员</p>
+            <a href="#"><p>{{accountData.name}}</p></a>
+            <p>{{accountData.role}}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "AccountSide"
+        name: "AccountSide",
+        props:['accountData']
     }
 </script>
 
 <style scoped>
     #account {
         position: absolute;
-        top: 55px;
+        top: 0;
         right: 0;
         font-size: 1em;
     }
 
     #account img {
-        margin: 15px;
+        margin: 10px;
         float: left;
 
     }

@@ -1,7 +1,7 @@
 <template>
     <div id="charts">
         <Head></Head>
-        <AccountSide></AccountSide>
+        <AccountSide :account-data="accountData"></AccountSide>
         <div id="data">
             <div class="data-box card">
                 <h2>用户信息总览</h2>
@@ -81,15 +81,29 @@
                 {name: '上海市', value: [121.109426, 31.442531, 8653]},
                 {name: '山西省', value: [112.549248, 37.857014, 10223]},
                 {name: '吉林省', value: [125.324501, 43.886841, 3223]},
-                {name: '黑龙江省', value: [126.642464, 45.756966, 493]},
-                {name: '天津市', value: [117.190186, 39.125595, 3975]},
-                {name: '内蒙古', value: [111.751990,40.841490, 551]},
-                {name: '河南省', value: [113.665413,34.757977, 7521]},
-                {name: '陕西省', value: [108.948021,34.263161, 5684]},
-                {name: '湖北省', value: [114.298569,30.584354, 8541]},
-                {name: '安徽省', value: [117.283043,31.861191, 6354]},
-                // 合肥
-                {name: '浙江省', value: [120.15358,30.287458, 12354]},
+                {name: '黑龙江省', value: [126.642464, 45.756966, 1393]},
+                {name: '天津市', value: [117.190186, 39.125595, 6975]},
+                {name: '内蒙古', value: [111.751990, 40.841490, 1551]},
+                {name: '河南省', value: [113.665413, 34.757977, 7521]},
+                {name: '陕西省', value: [108.948021, 34.263161, 5684]},
+                {name: '湖北省', value: [114.298569, 30.584354, 8541]},
+                {name: '安徽省', value: [117.283043, 31.861191, 6354]},
+                {name: '湖南省', value: [112.982277, 28.19409, 2340]},
+                {name: '江西省', value: [115.892151, 28.676493, 1162]},
+                {name: '福建省', value: [119.306236, 26.075302, 2298]},
+                {name: '广东省', value: [113.28064, 23.125177, 4421]},
+                {name: '重庆市', value: [106.504959, 29.533155, 903]},
+                {name: '云南省', value: [102.71225, 25.040609, 1123]},
+                {name: '贵州省', value: [106.713478, 26.578342, 2512]},
+                {name: '四川省', value: [104.065735, 30.659462, 3095]},
+                {name: '甘肃省', value: [103.834170, 36.061380, 531]},
+                {name: '浙江省', value: [120.15358, 30.287458, 12354]},
+                {name: '西藏', value: [91.11450, 29.644150, 12]},
+                {name: '新疆', value: [87.616880, 43.826630, 68]},
+                {name: '香港', value: [114.165460, 22.275340, 12]},
+                {name: '澳门', value: [113.549130, 22.198750, 7]},
+                {name: '青海省', value: [101.777820, 36.617290, 29]},
+
 
             ];
             let ageData = [
@@ -118,7 +132,10 @@
                 increaseFastestArea: "上海市",
                 increaseNumber: 3521
             };
-
+            let accountData = {
+                name: "Bessie Berry",
+                role: "管理员"
+            };
 
             return {
                 userInfoData: userInfoData,
@@ -126,7 +143,8 @@
                 abnormalInfoData: abnormalInfoData,
                 userMapData: userMapData,
                 onlineData: onlineData,
-                mapInfoData: mapInfoData
+                mapInfoData: mapInfoData,
+                accountData: accountData,
             }
         }
     }
