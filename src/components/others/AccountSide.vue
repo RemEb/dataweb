@@ -1,6 +1,6 @@
 <template>
     <div id="account">
-        <a href="#"><img src="../../assets/photo.png"></a>
+        <a href="#"><img :src="imgUrl"></a>
         <div class="account-text">
             <a href="#"><p>{{accountData.name}}</p></a>
             <p>{{accountData.role}}</p>
@@ -11,7 +11,12 @@
 <script>
     export default {
         name: "AccountSide",
-        props:['accountData']
+        props: ['accountData'],
+        data() {
+            return{
+               imgUrl:require("../../assets/photo.png")
+            }
+        }
     }
 </script>
 
@@ -33,16 +38,20 @@
         float: left;
         margin-right: 20px;
     }
-    .account-text p:nth-child(1){
-        font-weight:bold;
-        margin-top:20px;
+
+    .account-text p:nth-child(1) {
+        font-weight: bold;
+        margin-top: 20px;
     }
-    .account-text p:nth-child(2){
+
+    .account-text p:nth-child(2) {
         color: gray;
     }
-    .account-text p{
+
+    .account-text p {
         margin: 0 0;
     }
+
     .account-text a {
         color: black;
     }

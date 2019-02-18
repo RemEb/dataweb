@@ -63,7 +63,9 @@
         },
         data: function () {
             let date = new Date();
+            //this.getAPIData();
 
+            //这里使用模拟数据来表现页面效果
             let userInfoData = {
                 driveAverageTime: 1.5,
                 healthInfo: "良好",
@@ -98,11 +100,11 @@
                 {name: '四川省', value: [104.065735, 30.659462, 3095]},
                 {name: '甘肃省', value: [103.834170, 36.061380, 531]},
                 {name: '浙江省', value: [120.15358, 30.287458, 12354]},
-                {name: '西藏', value: [91.11450, 29.644150, 12]},
-                {name: '新疆', value: [87.616880, 43.826630, 68]},
-                {name: '香港', value: [114.165460, 22.275340, 12]},
-                {name: '澳门', value: [113.549130, 22.198750, 7]},
-                {name: '青海省', value: [101.777820, 36.617290, 29]},
+                {name: '西藏', value: [91.11450, 29.644150, 112]},
+                {name: '新疆', value: [87.616880, 43.826630, 168]},
+                {name: '香港', value: [114.165460, 22.275340, 112]},
+                {name: '澳门', value: [113.549130, 22.198750, 87]},
+                {name: '青海省', value: [101.777820, 36.617290, 429]},
 
 
             ];
@@ -134,7 +136,7 @@
             };
             let accountData = {
                 name: "Bessie Berry",
-                role: "管理员"
+                role: "管理员",
             };
 
             return {
@@ -145,6 +147,31 @@
                 onlineData: onlineData,
                 mapInfoData: mapInfoData,
                 accountData: accountData,
+            }
+        },
+        methods: {
+            /**
+             * 通过ajax访问服务器数据，异步得到表格数据
+             *
+             * @param param
+             */
+            getAPIData(param) {
+                $.ajax({
+                    type: "post",
+                    async: true,            //异步请求
+                    url: "TestServlet?"+param,    //请求发送到TestServlet处
+                    data: {},
+                    dataType: "json",        //返回数据形式为json
+                    success: function (result) {
+                        //请求成功时执行该函数内容，result即为服务器返回的json对象
+                        if (result) {
+                            return result;
+                        }
+                    },
+                    error: function (errorMsg) {
+                        alert("请求数据失败!" + errorMsg);
+                    }
+                })
             }
         }
     }
