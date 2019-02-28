@@ -105,8 +105,6 @@
                 {name: '香港', value: [114.165460, 22.275340, 112]},
                 {name: '澳门', value: [113.549130, 22.198750, 87]},
                 {name: '青海省', value: [101.777820, 36.617290, 429]},
-
-
             ];
             let ageData = [
                 {value: 123533, name: '18-25岁'},
@@ -119,7 +117,9 @@
             let abnormalInfoData = [
                 {value: 10, name: '体温异常'},
                 {value: 5, name: '心率异常'},
-                {value: 15, name: '血氧异常'},
+                {value: 15, name: '血糖异常'},
+                {value: 15, name: '血压异常'},
+                {value: 23, name: '血脂异常'},
                 {value: 25, name: '加速度异常'},
                 {value: 20, name: '车内环境异常'},
                 {value: 35, name: '其他'},
@@ -156,7 +156,7 @@
              * @param param
              */
             getAPIData(param) {
-                $.ajax({
+               /* $.ajax({
                     type: "post",
                     async: true,            //异步请求
                     url: "TestServlet?"+param,    //请求发送到TestServlet处
@@ -171,7 +171,7 @@
                     error: function (errorMsg) {
                         alert("请求数据失败!" + errorMsg);
                     }
-                })
+                })*/
             }
         }
     }
