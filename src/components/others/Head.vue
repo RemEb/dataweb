@@ -1,4 +1,3 @@
-<!--头部模块-->
 <template>
     <div class="header">
         <div class="bg_header">

@@ -1,4 +1,3 @@
-<!--年龄信息模块-->
 <template>
     <div>
         <div id="AgeChart" :style="{width: '300px', height: '400px'}"></div>

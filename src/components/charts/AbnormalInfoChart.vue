@@ -1,4 +1,3 @@
-<!--异常信息模块-->
 <template>
     <div>
         <div id="AbnormalInfoChart" :style="{width: '500px', height: '400px'}"></div>
