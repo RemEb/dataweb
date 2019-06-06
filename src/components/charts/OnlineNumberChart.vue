@@ -1,3 +1,4 @@
+<!--在线人数变化模板-->
 <template>
     <div>
         <div id="OnlineNumberChart" :style="{width: '500px', height: '400px'}"></div>

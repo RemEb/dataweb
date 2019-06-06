@@ -1,3 +1,7 @@
+<!--整体页面
+    包括模拟数据，
+    传递给各个模块
+-->
 <template>
     <div id="charts">
         <Head></Head>
@@ -61,6 +65,21 @@
             MapInfoList,
             AccountSide
         },
+
+        created:function() {
+            this.$axios.get("/apis/space/query?parkingLotId=a2e402e56fbd4d57b5c0d2ada8330fa0")
+                .then(res => {
+                    window.console.log("success");
+                    window.console.log(res.data.data)
+                }, res => {
+                    window.console.log("Request Fail");
+                })
+        },
+
+        mounted: function () {
+            // this.testApi();
+        },
+
         data: function () {
             let date = new Date();
             //this.getAPIData();
@@ -150,29 +169,17 @@
             }
         },
         methods: {
-            /**
-             * 通过ajax访问服务器数据，异步得到表格数据
-             *
-             * @param param
-             */
-            getAPIData(param) {
-               /* $.ajax({
-                    type: "post",
-                    async: true,            //异步请求
-                    url: "TestServlet?"+param,    //请求发送到TestServlet处
-                    data: {},
-                    dataType: "json",        //返回数据形式为json
-                    success: function (result) {
-                        //请求成功时执行该函数内容，result即为服务器返回的json对象
-                        if (result) {
-                            return result;
-                        }
-                    },
-                    error: function (errorMsg) {
-                        alert("请求数据失败!" + errorMsg);
-                    }
-                })*/
+
+
+            testApi() {
+                this.$http.get('http://www.lvchengyi.club:8011/space/query?parkingLotId=a2e402e56fbd4d57b5c0d2ada8330fa0')
+                    .then(response => {
+                        response.setHeader("Access-Control-Allow-Origin", "*");
+                        window.console.log(response.data);
+                    })
             }
+
+
         }
     }
 

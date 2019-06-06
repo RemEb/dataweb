@@ -1,3 +1,4 @@
+<!--地图在线模块-->
 <template>
     <div id="userMapChart" :style="{width: '700px', height: '500px'}"></div>
 </template>
